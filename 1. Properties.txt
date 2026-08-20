@@ -1,0 +1,15 @@
+1. Properties of an effective hash function
+An effective cryptographic hash function generally possesses the following core properties:
+
+· Deterministic: The same input will always produce the exact same output hash.
+· Fast computation: It should be efficient to compute the hash value for any given input.
+· Pre-image resistance (One-way): Given a hash value h, it should be computationally infeasible to find an input m such that hash(m) = h.
+· Second pre-image resistance (Weak collision resistance): Given an input m1, it should be computationally infeasible to find another input m2 (where m2 ≠ m1) such that hash(m1) = hash(m2).
+· Collision resistance (Strong collision resistance): It should be computationally infeasible to find any two distinct inputs m1 and m2 that produce the same hash output.
+· Avalanche effect: A very small change in the input (like changing a single bit) should result in a significantly different output hash.
+
+2. Load Factor (α)
+In the context of hashing (particularly in hash tables), the Load Factor is a measure of how full the hash table is. It is defined as the ratio of the number of stored items (n) to the total number of available slots/buckets in the table (m).
+
+· Formula: α = n / m
+· Significance: A higher load factor indicates a more "crowded" table, which typically leads to more collisions and degrades performance (increasing search/insertion time). When α exceeds a certain threshold (often around 0.75), hash tables usually undergo a "rehashing" (resizing) process to maintain efficiency.
